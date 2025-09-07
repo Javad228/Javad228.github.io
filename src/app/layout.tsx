@@ -6,7 +6,7 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Javad Baghirov - Software Engineer & Machine Learning Engineer",
+  title: "Javad's Portfolio",
   description: "Portfolio of Javad Baghirov - Passionate about Cloud Architecture and Machine Learning, specializing in NLP and Computer Vision",
   keywords: "Javad Baghirov, Full-Stack Developer, Software Engineer, Python, Django, React, Flutter, Java, AWS, PostgreSQL, MySQL",
   authors: [{ name: "Javad Baghirov" }],

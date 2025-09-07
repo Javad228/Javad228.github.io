@@ -2,6 +2,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
+import { PhysicsBall } from "@/components/ui/physics-ball";
 import Image from "next/image";
 import { motion, useScroll, useTransform, useSpring, useInView } from "framer-motion";
 
@@ -31,15 +32,17 @@ export default function Portfolio() {
             link: "/emserver",
             github: "https://github.com/Javad228/EMSuite-Server",
             featured: true,
+            badge: { text: "2000+ Users", color: "emerald" },
         },
         {
-            title: "Workout/Exercise Logger",
+            title: "FitQuest",
             description: "Comprehensive fitness tracking application with progress analytics and AWS integration",
             image: "/demoformainf.png",
             categories: ["Django", "REST API", "Python", "Flutter", "AWS", "S3", "Dart", "PostgreSQL"],
             link: "/workoutlog",
             github: "https://github.com/Javad228/Workout-Logger",
             featured: true,
+            badge: { text: "Received Investment", color: "purple" },
         },
         {
             title: "Wise Connect",
@@ -195,16 +198,12 @@ export default function Portfolio() {
                                     className="relative group"
                                 >
                                     <div className="absolute -inset-4 bg-gradient-to-r from-emerald-500 via-blue-500 to-purple-500 rounded-full blur-2xl opacity-30 group-hover:opacity-50 transition-opacity duration-500 animate-gradient"></div>
-                                    <div className="relative">
-                                        <div className="absolute inset-0 bg-gradient-to-r from-emerald-500 to-blue-500 rounded-full opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
-                                        <Image
-                                            src="/profile_headshot.jpg"
-                                            alt="Javad Baghirov"
-                                            width={400}
-                                            height={400}
-                                            className="relative rounded-full shadow-2xl ring-4 ring-white/10 dark:ring-white/20 group-hover:scale-105 transition-transform duration-300"
-                                        />
-                                    </div>
+                                    <PhysicsBall
+                                        src="/profile_headshot.jpg"
+                                        alt="Javad Baghirov"
+                                        width={400}
+                                        height={400}
+                                    />
                                     
                                     {/* Floating badges */}
                                     <motion.div
@@ -426,9 +425,24 @@ export default function Portfolio() {
                             >
                                 <CardContainer className="inter-var cursor-pointer h-full">
                                     <CardBody className="bg-white relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-slate-900 dark:border-slate-700 border-slate-200 w-full h-full rounded-xl p-6 border">
-                                        <CardItem translateZ="50" className="text-xl font-bold text-slate-900 dark:text-white">
-                                            {project.title}
-                                        </CardItem>
+                                        <div className="flex items-center justify-between mb-2">
+                                            <CardItem translateZ="50" className="text-xl font-bold text-slate-900 dark:text-white">
+                                                {project.title}
+                                            </CardItem>
+                                            {project.badge && (
+                                                <CardItem translateZ="60">
+                                                    <span className={`px-3 py-1 text-xs font-semibold rounded-full ${
+                                                        project.badge.color === 'emerald' 
+                                                            ? 'bg-emerald-100 text-emerald-800 dark:bg-emerald-900/30 dark:text-emerald-300' 
+                                                            : project.badge.color === 'purple'
+                                                            ? 'bg-purple-100 text-purple-800 dark:bg-purple-900/30 dark:text-purple-300'
+                                                            : 'bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300'
+                                                    }`}>
+                                                        {project.badge.text}
+                                                    </span>
+                                                </CardItem>
+                                            )}
+                                        </div>
                                         <CardItem as="p" translateZ="60" className="text-slate-600 text-sm mt-2 dark:text-slate-300">
                                             {project.description}
                                         </CardItem>
@@ -525,9 +539,24 @@ export default function Portfolio() {
                             >
                                 <CardContainer className="inter-var cursor-pointer h-full">
                                     <CardBody className="bg-slate-50 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-slate-800 dark:border-slate-700 border-slate-200 w-full h-full rounded-xl p-6 border">
-                                        <CardItem translateZ="50" className="text-lg font-bold text-slate-900 dark:text-white">
-                                            {project.title}
-                                        </CardItem>
+                                        <div className="flex items-center justify-between mb-2">
+                                            <CardItem translateZ="50" className="text-lg font-bold text-slate-900 dark:text-white">
+                                                {project.title}
+                                            </CardItem>
+                                            {project.badge && (
+                                                <CardItem translateZ="60">
+                                                    <span className={`px-2 py-1 text-xs font-semibold rounded-full ${
+                                                        project.badge.color === 'emerald' 
+                                                            ? 'bg-emerald-100 text-emerald-800 dark:bg-emerald-900/30 dark:text-emerald-300' 
+                                                            : project.badge.color === 'purple'
+                                                            ? 'bg-purple-100 text-purple-800 dark:bg-purple-900/30 dark:text-purple-300'
+                                                            : 'bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300'
+                                                    }`}>
+                                                        {project.badge.text}
+                                                    </span>
+                                                </CardItem>
+                                            )}
+                                        </div>
                                         <CardItem as="p" translateZ="60" className="text-slate-600 text-sm mt-2 dark:text-slate-300 line-clamp-3">
                                             {project.description}
                                         </CardItem>
