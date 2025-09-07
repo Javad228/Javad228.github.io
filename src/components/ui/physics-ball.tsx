@@ -33,6 +33,7 @@ export const PhysicsBall: React.FC<PhysicsBallProps> = ({
   const [isDragging, setIsDragging] = useState(false);
   
   const [windowSize, setWindowSize] = useState({ width: 0, height: 0 });
+  const [isMobile, setIsMobile] = useState(false);
 
   const [gravity, setGravity] = useState(0.6);
   const [friction, setFriction] = useState(0.99);
@@ -41,6 +42,7 @@ export const PhysicsBall: React.FC<PhysicsBallProps> = ({
   useEffect(() => {
     const handleResize = () => {
       setWindowSize({ width: window.innerWidth, height: window.innerHeight });
+      setIsMobile(window.innerWidth < 768); // Mobile breakpoint
     };
     handleResize();
     window.addEventListener('resize', handleResize);
@@ -48,7 +50,7 @@ export const PhysicsBall: React.FC<PhysicsBallProps> = ({
   }, []);
 
   const handleClick = () => {
-    if (!isPhysicsMode && initialElementRef.current) {
+    if (!isMobile && !isPhysicsMode && initialElementRef.current) {
       const rect = initialElementRef.current.getBoundingClientRect();
       x.set(rect.left);
       y.set(rect.top);
@@ -160,15 +162,19 @@ export const PhysicsBall: React.FC<PhysicsBallProps> = ({
           className={`rounded-full shadow-2xl ring-4 ring-white/10 dark:ring-white/20 group-hover:scale-105 transition-transform duration-300 ${className}`}
         />
         <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-white/0 to-white/0 group-hover:from-white/10 group-hover:to-transparent transition-all duration-300" />
-        <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-          <span className="text-xs text-slate-400 whitespace-nowrap">Click to play! 🎾</span>
-        </div>
-        <div className="absolute -top-16 left-1/2 -translate-x-1/2 pointer-events-none">
-          <SimpleArrow />
-          <span className="absolute -top-6 left-1/2 -translate-x-1/2 text-sm text-blue-500 whitespace-nowrap font-medium animate-bounce">
-            Click me!
-          </span>
-        </div>
+        {!isMobile && (
+          <>
+            <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <span className="text-xs text-slate-400 whitespace-nowrap">Click to play! 🎾</span>
+            </div>
+            <div className="absolute -top-16 left-1/2 -translate-x-1/2 pointer-events-none">
+              <SimpleArrow />
+              <span className="absolute -top-6 left-1/2 -translate-x-1/2 text-sm text-blue-500 whitespace-nowrap font-medium animate-bounce">
+                Click me!
+              </span>
+            </div>
+          </>
+        )}
       </div>
       {isPhysicsMode && (
         <>

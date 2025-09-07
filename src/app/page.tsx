@@ -652,10 +652,10 @@ export default function Portfolio() {
                         className="mx-auto max-w-2xl text-center"
                     >
                         <h2 className="text-3xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-4xl">
-                            Let's Work Together
+                            Let&apos;s Work Together
                         </h2>
                         <p className="mt-6 text-lg leading-8 text-slate-600 dark:text-slate-300">
-                            I'm always interested in new opportunities and exciting projects
+                            I&apos;m always interested in new opportunities and exciting projects
                         </p>
                         <div className="mt-10 flex items-center justify-center gap-x-6">
                             <a
