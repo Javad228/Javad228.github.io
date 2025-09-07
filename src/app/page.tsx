@@ -131,6 +131,28 @@ export default function Portfolio() {
                 
                 <div className="relative w-full">
                     <div className="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:flex lg:items-center lg:px-8 lg:py-40">
+                        {/* Mobile: Profile picture first */}
+                        <div className="flex flex-col lg:hidden items-center mb-12">
+                            <motion.div
+                                initial={{ opacity: 0, scale: 0.8, rotate: -10 }}
+                                animate={{ opacity: 1, scale: 1, rotate: 0 }}
+                                transition={{ 
+                                    duration: 0.8, 
+                                    delay: 0.2,
+                                    scale: { type: "spring", stiffness: 100 }
+                                }}
+                                className="relative group"
+                            >
+                                <div className="absolute -inset-4 bg-gradient-to-r from-emerald-500 via-blue-500 to-purple-500 rounded-full blur-2xl opacity-30 group-hover:opacity-50 transition-opacity duration-500 animate-gradient"></div>
+                                <PhysicsBall
+                                    src="/profile_headshot.jpg"
+                                    alt="Javad Baghirov"
+                                    width={250}
+                                    height={250}
+                                />
+                            </motion.div>
+                        </div>
+                        
                         <div className="mx-auto max-w-2xl flex-shrink-0 lg:mx-0 lg:max-w-xl">
                             <motion.div
                                 initial={{ opacity: 0, y: 30 }}
@@ -185,7 +207,7 @@ export default function Portfolio() {
                             </motion.div>
                         </div>
                         
-                        <div className="mx-auto mt-16 flex max-w-2xl sm:mt-24 lg:ml-10 lg:mr-0 lg:mt-0 lg:max-w-none lg:flex-none xl:ml-32">
+                        <div className="hidden lg:flex mx-auto mt-16 max-w-2xl sm:mt-24 lg:ml-10 lg:mr-0 lg:mt-0 lg:max-w-none lg:flex-none xl:ml-32">
                             <div className="max-w-3xl flex-none sm:max-w-5xl lg:max-w-none">
                                 <motion.div
                                     initial={{ opacity: 0, scale: 0.8, rotate: -10 }}
