@@ -6,8 +6,17 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Portfolio",
-  description: "Javad Baghirov Portfolio",
+  title: "Javad Baghirov - Software Engineer & Machine Learning Engineer",
+  description: "Portfolio of Javad Baghirov - Passionate about Cloud Architecture and Machine Learning, specializing in NLP and Computer Vision",
+  keywords: "Javad Baghirov, Full-Stack Developer, Software Engineer, Python, Django, React, Flutter, Java, AWS, PostgreSQL, MySQL",
+  authors: [{ name: "Javad Baghirov" }],
+  creator: "Javad Baghirov",
+  openGraph: {
+    title: "Javad Baghirov - Full-Stack Developer",
+    description: "Portfolio showcasing innovative web and mobile applications",
+    type: "website",
+    locale: "en_US",
+  },
 };
 
 export default function RootLayout({
