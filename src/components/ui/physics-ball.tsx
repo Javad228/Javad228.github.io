@@ -115,7 +115,7 @@ export const PhysicsBall: React.FC<PhysicsBallProps> = ({
         dragMomentum={false}
         onDragStart={() => setIsDragging(true)}
         onDragEnd={handleDragEnd}
-        onDoubleClick={handleDoubleClick}
+        onClick={handleDoubleClick}
         style={{
           x,
           y,
@@ -140,7 +140,7 @@ export const PhysicsBall: React.FC<PhysicsBallProps> = ({
           <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-white/30 via-white/10 to-transparent" />
         </div>
         <div className="absolute -top-10 left-1/2 transform -translate-x-1/2 bg-black/80 text-white text-xs px-3 py-1 rounded-full whitespace-nowrap">
-          Drag to throw! Double-click to reset
+          Drag to throw! Click to reset
         </div>
       </motion.div>
     );
@@ -191,6 +191,20 @@ export const PhysicsBall: React.FC<PhysicsBallProps> = ({
               <label>Bounce: {bounce.toFixed(2)}</label>
               <input type="range" min="-1" max="-0.1" step="0.1" value={bounce} onChange={(e) => setBounce(parseFloat(e.target.value))} />
             </div>
+            <button 
+              onClick={handleDoubleClick}
+              style={{ 
+                marginTop: '10px', 
+                padding: '5px 10px', 
+                background: '#ef4444', 
+                color: 'white', 
+                border: 'none', 
+                borderRadius: '4px', 
+                cursor: 'pointer' 
+              }}
+            >
+              Reset
+            </button>
           </div>
           <PhysicsComponent gravity={gravity} friction={friction} bounce={bounce} />
         </>
