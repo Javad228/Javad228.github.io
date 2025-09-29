@@ -10,7 +10,8 @@ import { motion, useScroll, useTransform, useSpring, useInView } from "framer-mo
 const badgeCategories = [
     "All", "Django", "REST API", "AWS", "S3", "MySQL", "PostgreSQL", "Python", "Java",
     "SpringBoot", "Flutter", "Dart", "React", "Node.js", "TypeScript", "JavaScript",
-    "Machine Learning", "Deep Learning", "PyTorch", "CUDA", "Optimization", "Healthcare"
+    "Machine Learning", "Deep Learning", "PyTorch", "CUDA", "Optimization", "Healthcare",
+    "Computer Vision"
 ];
 
 export default function Portfolio() {
@@ -406,6 +407,57 @@ export default function Portfolio() {
                     </div>
                 </div>
             </section>
+            
+            {/* Current Work Section - Simple */}
+            <section className="py-16 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 dark:from-slate-950 dark:via-blue-950/50 dark:to-purple-950/50">
+                <div className="mx-auto max-w-5xl px-6 lg:px-8">
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6 }}
+                        viewport={{ once: true }}
+                        className="text-center"
+                    >
+                        <div className="bg-white/80 dark:bg-slate-900/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-white/20 dark:border-slate-700/50">
+                            <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-blue-100 to-purple-100 dark:from-blue-900/30 dark:to-purple-900/30 text-sm font-medium text-blue-800 dark:text-blue-300 mb-6">
+                                <div className="w-2 h-2 bg-blue-500 rounded-full mr-2 animate-pulse"></div>
+                                Currently Exploring
+                            </div>
+                            
+                            <h2 className="text-2xl lg:text-3xl font-bold text-slate-900 dark:text-white mb-4">
+                                AI-Powered Diagram Generation
+                            </h2>
+                            
+                            <p className="text-lg text-slate-600 dark:text-slate-300 max-w-3xl mx-auto mb-6">
+                                Experimenting with diffusion models for generating structured technical diagrams. 
+                                Exploring different approaches to maintain diagram structure while allowing creative visualization.
+                            </p>
+                            
+                            <div className="flex flex-wrap justify-center gap-2 mb-8">
+                                {["AI Research", "Computer Vision", "Diffusion Models", "Technical Diagrams"].map((area) => (
+                                    <span
+                                        key={area}
+                                        className="px-3 py-1 text-sm font-medium bg-gradient-to-r from-blue-100 to-purple-100 dark:from-blue-900/30 dark:to-purple-900/30 text-blue-800 dark:text-blue-300 rounded-full border border-blue-200/50 dark:border-blue-700/50"
+                                    >
+                                        {area}
+                                    </span>
+                                ))}
+                            </div>
+                            
+                            <Link
+                                href="/ai-diagram-research"
+                                className="group inline-flex items-center justify-center px-6 py-3 rounded-lg bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-200 shadow-lg hover:shadow-xl"
+                            >
+                                <span>Follow Progress</span>
+                                <svg className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                                </svg>
+                            </Link>
+                        </div>
+                    </motion.div>
+                </div>
+            </section>
+            
             {/* Featured Projects Section - Enhanced */}
             <section className="py-24 relative bg-slate-50 dark:bg-slate-950 overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent via-emerald-50/50 to-transparent dark:via-emerald-950/20"></div>
