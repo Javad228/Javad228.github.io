@@ -4,7 +4,7 @@ import Link from "next/link";
 import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
 import { PhysicsBall } from "@/components/ui/physics-ball";
 import Image from "next/image";
-import { motion, useScroll, useTransform, useSpring, useInView, useMotionValue } from "framer-motion";
+import { motion, useScroll, useTransform, useSpring, useInView } from "framer-motion";
 
 // Badge Categories  
 const badgeCategories = [
@@ -20,23 +20,6 @@ export default function Portfolio() {
     const [scrolled, setScrolled] = useState(false);
     const [loading, setLoading] = useState(true);
     const projectsRef = useRef<HTMLDivElement>(null);
-    const cursorX = useMotionValue(-100);
-    const cursorY = useMotionValue(-100);
-    const cursorDotX = useMotionValue(-100);
-    const cursorDotY = useMotionValue(-100);
-
-    // Custom cursor effect
-    useEffect(() => {
-        const moveCursor = (e: MouseEvent) => {
-            cursorX.set(e.clientX - 10);
-            cursorY.set(e.clientY - 10);
-            cursorDotX.set(e.clientX - 3);
-            cursorDotY.set(e.clientY - 3);
-        };
-
-        window.addEventListener('mousemove', moveCursor);
-        return () => window.removeEventListener('mousemove', moveCursor);
-    }, [cursorX, cursorY, cursorDotX, cursorDotY]);
 
     // Track scroll position for navbar
     useEffect(() => {
@@ -78,7 +61,7 @@ export default function Portfolio() {
             description: "Comprehensive fitness tracking application with progress analytics and AWS integration",
             image: "/demoformainf.png",
             categories: ["Django", "REST API", "Python", "Flutter", "AWS", "S3", "Dart", "PostgreSQL"],
-            link: "/workoutlog",
+            link: "https://builder.aws.com/content/2rcwyIkwliFSVdbJStld9H6J8MV/fitquest-a-cyberpunk-rpg-fueled-by-your-workouts",
             github: "https://github.com/Javad228/Workout-Logger",
             featured: true,
             badge: { text: "Received Investment", color: "purple" },
@@ -276,22 +259,6 @@ export default function Portfolio() {
             </motion.div>
 
             <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-100 dark:from-slate-950 dark:via-slate-900 dark:to-slate-800 relative">
-            {/* Custom Cursor */}
-            <motion.div
-                className="custom-cursor hidden md:block"
-                style={{
-                    left: cursorX,
-                    top: cursorY,
-                }}
-            />
-            <motion.div
-                className="custom-cursor-dot hidden md:block"
-                style={{
-                    left: cursorDotX,
-                    top: cursorDotY,
-                }}
-            />
-
             {/* Floating Navigation Bar */}
             <motion.nav
                 initial={{ y: -100 }}
