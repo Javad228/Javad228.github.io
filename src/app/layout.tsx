@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/react";
 import { Instrument_Sans, Syne } from "next/font/google";
+import { LoadingScreen } from "@/components/ui/loading-screen";
 import "./globals.css";
 
 const instrumentSans = Instrument_Sans({
@@ -39,6 +40,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${instrumentSans.variable} ${syne.variable}`}>
+        <LoadingScreen />
         {children}
         <Analytics />
       </body>

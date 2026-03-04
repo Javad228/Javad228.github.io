@@ -177,7 +177,7 @@ export function Hero() {
           <article className="hero-tilt-card hero-tilt-card--soft edge-frame grid gap-4 rounded-3xl border border-slate-900/10 bg-gradient-to-br from-slate-950 via-slate-900 to-blue-950 p-5 text-slate-100 shadow-2xl shadow-slate-900/15 sm:p-6 md:grid-cols-[0.9fr_1.1fr]">
             <div>
               <p className="text-xs uppercase tracking-[0.2em] text-emerald-300">Currently Focused On</p>
-              <p className="mt-3 text-[15px] leading-8 text-slate-300">Machine learning systems, cloud-native architecture, and production-grade interfaces.</p>
+              <p className="mt-3 text-[15px] leading-8 text-slate-300">Machine learning systems, cloud-native architecture, and NLP solutions</p>
             </div>
             <div>
               <p className="text-xs uppercase tracking-[0.2em] text-blue-300">Reach Out</p>
