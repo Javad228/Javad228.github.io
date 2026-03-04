@@ -12,7 +12,7 @@ export function MacbookScrollDemo() {
             EMSuite Server <br /> Interactive 3D Visualization of Proteins.
           </span>
                 }
-                src={`/emserverdemo.png`}
+                src={`/assets/images/projects/emserverdemo.png`}
                 showGradient={true}
 
             />
@@ -21,8 +21,9 @@ export function MacbookScrollDemo() {
 }
 export default function WorkoutLoggerDemo() {
     return (
-        <div className="mx-4">
-            <div className="flex flex-col overflow-hidden h-auto">
+        <div className="dark min-h-screen bg-[#0B0B0F] text-white">
+            <div className="mx-4 py-6">
+                <div className="flex flex-col overflow-hidden h-auto">
                 <ContainerScroll
                     titleComponent={
                         <>
@@ -36,7 +37,7 @@ export default function WorkoutLoggerDemo() {
                     }
                 >
                     <Image
-                        src={`/demoappworkout.png`}
+                        src={`/assets/images/projects/demoappworkout.png`}
                         alt="hero"
                         height={1980}
                         width={320}
@@ -44,7 +45,7 @@ export default function WorkoutLoggerDemo() {
                         draggable={true}
                     />
                 </ContainerScroll>
-            </div>
+                </div>
             <div
                 className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden w-full sm:w-3/4 md:w-2/4 mb-4 sm:mb-8 mx-auto">
                 <div className="p-4">
@@ -157,6 +158,7 @@ export default function WorkoutLoggerDemo() {
 
             </div>
             <br/>
+            </div>
         </div>
     );
 }

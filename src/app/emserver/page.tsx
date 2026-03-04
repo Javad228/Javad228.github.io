@@ -12,7 +12,7 @@ const MacbookScrollDemo: React.FC = () => {
                         EMSuite Server <br /> Interactive 3D Visualization of Proteins.
                     </span>
                 }
-                src={`/emserverdemo.png`}
+                src={`/assets/images/projects/emserverdemo.png`}
                 showGradient={true}
             />
         </div>
@@ -76,8 +76,9 @@ const AwardBadge: React.FC<{ className?: string }> = ({ className }) => {
 
 const EMSuiteDemo: React.FC = () => {
     return (
-        <div className="space-y-8 mx-4">
-            <MacbookScrollDemo/>
+        <div className="dark bg-[#0B0B0F] text-white">
+            <div className="space-y-8 mx-4">
+                <MacbookScrollDemo/>
             <div
                 className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden w-full sm:w-3/4 md:w-2/4 mb-8 mx-auto">
                 <div className="p-4 sm:p-6">
@@ -213,6 +214,7 @@ const EMSuiteDemo: React.FC = () => {
 
             </div>
             <br/>
+            </div>
         </div>
     );
 }

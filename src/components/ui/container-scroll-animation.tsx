@@ -9,21 +9,21 @@ const frontend = [
         name: "Dart",
         designation: "Programming Language",
         image:
-            "/dartlogo.png",
+            "/assets/images/skills/dartlogo.png",
     },
     {
         id: 2,
         name: "Flutter",
         designation: "Software Development Kit",
         image:
-            "/flutterlogo.png",
+            "/assets/images/skills/flutterlogo.png",
     },
     {
         id: 3,
         name: "Material UI",
         designation: "Design Language",
         image:
-            "/materialUIlogo.png",
+            "/assets/images/skills/materialUIlogo.png",
     }
 ];
 
@@ -33,21 +33,21 @@ const backend = [
         name: "Django",
         designation: "Web Framework",
         image:
-            "/djangologo.png",
+            "/assets/images/skills/djangologo.png",
     },
     {
         id: 2,
         name: "Python",
         designation: "Programming Language",
         image:
-            "/pythonlogo.png",
+            "/assets/images/skills/pythonlogo.png",
     },
     {
         id: 3,
         name: "Rest API",
         designation: "Software Architectural Style",
         image:
-            "/respapilogo.png",
+            "/assets/images/skills/respapilogo.png",
     }
 ];
 
@@ -57,7 +57,7 @@ const database = [
         name: "MySQL",
         designation: "Database",
         image:
-            "/mysqllogo.png",
+            "/assets/images/skills/mysqllogo.png",
     }
 ];
 
@@ -67,14 +67,14 @@ const hosting = [
         name: "AWS",
         designation: "Cloud Computing Services",
         image:
-            "/awslogo.png",
+            "/assets/images/skills/awslogo.png",
     },
     {
         id: 2,
         name: "S3 Bucket",
         designation: "Cloud Object Storage",
         image:
-            "/s3bucketlogo.png",
+            "/assets/images/skills/s3bucketlogo.png",
     }
 ];
 

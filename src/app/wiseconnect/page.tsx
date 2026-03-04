@@ -5,8 +5,9 @@ import Image from "next/image";
 
 export default function WorkoutLoggerDemo() {
     return (
-        <div>
-            <div className="flex flex-col overflow-hidden h-auto">
+        <div className="dark min-h-screen bg-[#0B0B0F] text-white">
+            <div className="mx-4 py-6">
+                <div className="flex flex-col overflow-hidden h-auto">
                 <ContainerScroll
                     titleComponent={
                         <>
@@ -20,7 +21,7 @@ export default function WorkoutLoggerDemo() {
                     }
                 >
                     <Image
-                        src={`/wiseconnect0.jpg`}
+                        src={`/assets/images/projects/wiseconnect0.jpg`}
                         alt="hero"
                         height={1980}
                         width={320}
@@ -28,7 +29,7 @@ export default function WorkoutLoggerDemo() {
                         draggable={true}
                     />
                 </ContainerScroll>
-            </div>
+                </div>
             <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 mx-auto w-full sm:w-3/4 md:w-2/4">
                 <h2 className="text-xl sm:text-2xl font-bold mb-4 text-gray-900 dark:text-white text-center">
                     Technologies Used
@@ -74,6 +75,7 @@ export default function WorkoutLoggerDemo() {
             </div>
 
             <br/>
+            </div>
         </div>
     );
 }

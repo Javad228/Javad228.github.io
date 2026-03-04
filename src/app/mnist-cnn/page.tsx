@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function MnistCnnPage() {
     return (
-        <div className="min-h-screen bg-white dark:bg-slate-900">
+        <div className="dark min-h-screen bg-slate-900">
             <div className="mx-auto max-w-5xl px-6 py-12">
                 <h1 className="text-3xl font-bold text-slate-900 dark:text-white">MNIST CNN - CPU vs GPU</h1>
                 <p className="mt-4 text-slate-600 dark:text-slate-300">
@@ -29,21 +29,21 @@ export default function MnistCnnPage() {
                 {/* Image gallery */}
                 <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-4">
                     <Image
-                        src="/cudavspythorch_mnist.png"
+                        src="/assets/images/projects/cudavspythorch_mnist.png"
                         alt="CUDA vs PyTorch throughput and memory"
                         width={1200}
                         height={800}
                         className="w-full h-auto rounded-md border border-slate-200 dark:border-slate-700"
                     />
                     <Image
-                        src="/executiontime_mnist.png"
+                        src="/assets/images/projects/executiontime_mnist.png"
                         alt="Execution time breakdown"
                         width={1200}
                         height={800}
                         className="w-full h-auto rounded-md border border-slate-200 dark:border-slate-700"
                     />
                     <Image
-                        src="/memoreusage_mnist.png"
+                        src="/assets/images/projects/memoreusage_mnist.png"
                         alt="Memory usage comparison"
                         width={1200}
                         height={800}
@@ -56,7 +56,7 @@ export default function MnistCnnPage() {
                     <p className="text-sm text-slate-600 dark:text-slate-300">GPU/CPU architecture overview and results.</p>
                     <div className="mt-4 aspect-[4/3] w-full border rounded-md overflow-hidden border-slate-200 dark:border-slate-700">
                         <iframe
-                            src="/GPU_Architecture_Overview.pdf"
+                            src="/assets/docs/GPU_Architecture_Overview.pdf"
                             className="w-full h-full"
                             title="GPU Architecture Overview"
                         />
@@ -66,5 +66,3 @@ export default function MnistCnnPage() {
         </div>
     );
 }
-
-

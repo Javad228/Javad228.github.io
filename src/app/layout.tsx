@@ -1,15 +1,26 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import { Analytics } from "@vercel/analytics/react"
-import { CustomCursor } from "@/components/ui/custom-cursor";
+import { Analytics } from "@vercel/analytics/react";
+import { Instrument_Sans, Syne } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const instrumentSans = Instrument_Sans({
+  subsets: ["latin"],
+  variable: "--font-body",
+  display: "swap",
+});
+
+const syne = Syne({
+  subsets: ["latin"],
+  variable: "--font-display",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "Javad's Portfolio",
-  description: "Portfolio of Javad Baghirov - Passionate about Cloud Architecture and Machine Learning, specializing in NLP and Computer Vision",
-  keywords: "Javad Baghirov, Full-Stack Developer, Software Engineer, Python, Django, React, Flutter, Java, AWS, PostgreSQL, MySQL",
+  description:
+    "Portfolio of Javad Baghirov - Passionate about Cloud Architecture and Machine Learning, specializing in NLP and Computer Vision",
+  keywords:
+    "Javad Baghirov, Full-Stack Developer, Software Engineer, Python, Django, React, Flutter, Java, AWS, PostgreSQL, MySQL",
   authors: [{ name: "Javad Baghirov" }],
   creator: "Javad Baghirov",
   openGraph: {
@@ -27,11 +38,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <CustomCursor />
+      <body className={`${instrumentSans.variable} ${syne.variable}`}>
         {children}
+        <Analytics />
       </body>
-      <Analytics />
     </html>
   );
 }

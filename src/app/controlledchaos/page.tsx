@@ -12,7 +12,7 @@ const MacbookScrollDemo: React.FC = () => {
             Controlled Chaos <br /> A 2D top-down video game written solely in Java with no external frameworks or extensive libraries.
           </span>
                 }
-                src={`/controlledchaosdemo.png`}
+                src={`/assets/images/projects/controlledchaosdemo.png`}
                 showGradient={true}
             />
         </div>
@@ -40,8 +40,9 @@ const Badge: React.FC<{ className?: string }> = ({ className }) => {
 
 const EMSuiteDemo: React.FC = () => {
     return (
-        <div className="space-y-8 dark:bg-[#0B0B0F]">
-            <MacbookScrollDemo/>
+        <div className="dark min-h-screen bg-[#0B0B0F] text-white">
+            <div className="space-y-8 py-6">
+                <MacbookScrollDemo/>
             <div
                 className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden w-full sm:w-3/4 md:w-2/4 mb-8 mx-auto">
                 <div className="p-4 sm:p-6">
@@ -128,6 +129,7 @@ const EMSuiteDemo: React.FC = () => {
                 </a>
             </div>
             <br/>
+            </div>
         </div>
     );
 }

@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function OptimizationProjectPage() {
     return (
-        <div className="min-h-screen bg-white dark:bg-slate-900">
+        <div className="dark min-h-screen bg-slate-900">
             <div className="mx-auto max-w-5xl px-6 py-12">
                 <h1 className="text-3xl font-bold text-slate-900 dark:text-white">Optimizing FOLFOX (MSML604)</h1>
                 <p className="mt-4 text-slate-600 dark:text-slate-300">
@@ -30,7 +30,7 @@ export default function OptimizationProjectPage() {
                     <p className="text-sm text-slate-600 dark:text-slate-300">Optimization writeup.</p>
                     <div className="mt-4 aspect-[4/3] w-full border rounded-md overflow-hidden border-slate-200 dark:border-slate-700">
                         <iframe
-                            src="/Optimization_Writeup.pdf"
+                            src="/assets/docs/Optimization_Writeup.pdf"
                             className="w-full h-full"
                             title="Optimization Writeup"
                         />
@@ -40,5 +40,3 @@ export default function OptimizationProjectPage() {
         </div>
     );
 }
-
-
